@@ -1,4 +1,4 @@
 # in_class_activity_v2
 
 ###The Globe and Mail
- - https://pressreader.com/article/282265260975054
+ - Online: https://www.pressreader.com/canada/the-globe-and-mail-ottawa-quebec-edition/20241121/page/40
