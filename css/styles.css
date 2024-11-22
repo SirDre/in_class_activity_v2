@@ -57,10 +57,10 @@ hr {
 }
 img {
     max-width: 100%;
-    height: auto; 
+    height: auto;
+    display: block;
 }
  
-
 
 /* main content styles */
 main { 
@@ -181,9 +181,6 @@ figure.image2 {
     width:300px; 
     min-height: 300px;
 }
- 
-
-
 
 .footer { 
     margin: 3rem;
@@ -199,31 +196,38 @@ figure.image2 {
 /* media queries */
 @media (max-width: 790px) {
     body {
-        padding: 0px;
+        padding: 15px;
     }
 
     header {
         flex-wrap: wrap;
         gap: 1rem;
     }
-    
-    .content-layout {
+
+    article .content-grid,
+    article .content-layout,
+    article .content-layout2 {
         grid-template-columns: 1fr 1fr;
         gap: 1.5rem;
     }
 
-    .content-layout2 {
-        grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
-    }
-
-    .image1, .image2 {
+    figure.image1,
+    figure.image2 {
         grid-column: 1 / -1;
+        width: 100%;
         max-width: 100%;
+        min-width: auto;
     }
 
-    section[class^="col"] {
+    section[class^="col"],
+    section[class^="content-left"],
+    section[class^="content-right"] {
         grid-column: auto;
+    }
+
+    section.col5 {
+        grid-column: 1 / -1;
+        grid-row: auto;
     }
 }
 
@@ -232,15 +236,27 @@ figure.image2 {
         padding: 10px;
     }
 
-    .content-layout,
-    .content-layout2 {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+    main {
+        padding: 1rem 0.5rem;
     }
 
     header {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    article .content-grid,
+    article .content-layout,
+    article .content-layout2 {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    section[class^="col"],
+    section[class^="content-left"],
+    section[class^="content-right"] {
+        grid-column: 1;
+        grid-row: auto;
     }
 
     h1 {
@@ -251,8 +267,11 @@ figure.image2 {
         font-size: 3em;
     }
 
-    main {
-        padding: 1rem 0.5rem;
+    figure.image1,
+    figure.image2 {
+        width: 100%;
+        max-width: 100%;
+        min-width: unset;
+        margin: 1rem 0;
     }
-
-} 
+}
