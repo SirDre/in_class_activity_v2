@@ -271,7 +271,7 @@ figure.image2 {
     figure.image2 {
         width: 100%;
         max-width: 100%;
-        min-width: unset;
+        min-width: auto;
         margin: 1rem 0;
     }
 }
